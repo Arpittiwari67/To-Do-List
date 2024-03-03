@@ -1,0 +1,241 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+    font-family: 'DM Sans', sans-serif;
+
+    align-items: center;
+    height: 100vh;
+
+    margin: 5px;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    position: relative;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: rgb(255, 150, 129);
+    font-size: 40px;
+}
+
+h2 {
+    color: rgb(255, 223, 197);
+    padding-top: 15px;
+}
+
+h3 {
+    font-style: italic;
+    font-weight: lighter;
+    font-size: 13px;
+    color: rgb(255, 150, 129);
+}
+
+footer {
+    text-align: center;
+    min-width: 500px;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    margin: 3px;
+}
+
+p {
+    /*the rgb is less of an eyestrain than the white*/
+    /*but shows up enough to be noticable*/
+    color: rgb(253, 229, 209);
+    font-style: italic;
+    padding-top: 10px;
+}
+
+/*THE BOX OF USERINPUT TO-DO ITEMS*/
+.container {
+    margin: auto;
+    /*the thing that centers the box*/
+
+    text-align: center;
+    align-items: center;
+    background-image: linear-gradient(rgb(255, 100, 136), rgb(255, 150, 129), rgb(255, 204, 163));
+    /*box bg*/
+    width: 50%;
+    top: 50%;
+    border-radius: 13px;
+    /*rounds the corners*/
+
+    /*NOTE TO SELF: no max. height bc there's also*/
+    /*no max. number of items listed - can be as long as needed!!*/
+    min-width: 500px;
+    min-height: 100px;
+
+    padding-top: 10px;
+    padding-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.todo-container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+header {
+    font-size: 24px;
+    text-align: center;
+    padding-top: 0px;
+    padding-bottom: 20px;
+    /*keeps header from sliding left/right on resize*/
+    min-width: 500px;
+}
+
+header, form {
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form button {
+    cursor: pointer;
+    background-color: white;
+    color: rgb(255, 150, 129);
+    /*margin: 16px;*/
+    transition: all 0.4s ease;
+    text-align: center;
+
+    /*note to self: got rid of the pretty border radius*/
+    /*so the button would align with the userinput*/
+}
+
+form button:hover {
+    cursor: pointer;
+    background-color: rgb(252, 192, 143);
+    color: white;
+}
+
+form input, form button {
+    cursor: pointer;
+    background-color: white;
+    padding: 8px;
+    font-size: 32px;
+    border: none;
+}
+
+input:focus {
+    /*removes the border when*/
+    /*you click on "add new item"*/
+    outline: none;
+}
+
+::placeholder {
+    /*lowers the opacity of the placeholder text*/
+    opacity: 15%;
+    /*only affect placeholder, not the items themselves*/
+    font-style: italic;
+}
+
+
+.todo-list {
+    list-style: none;
+    min-width: 30%;
+}
+
+.todo {
+    margin: 24px;
+    background: white;
+    font-size: 24px;
+    display: flex;
+    /*adds space between text and icons*/
+    justify-content: space-between;
+    align-items: center;
+    /*the items' transitional time*/
+    transition: all 0.6s ease;
+}
+
+.todo li {
+    /*pushes the complete btn and delete btn together*/
+    flex: 1;
+}
+
+.trash-btn {
+    cursor: pointer;
+    transition: 0.4s ease;
+    /*less of an eyestrain but still brighter than on hover*/
+    background-color: rgb(248, 96, 96);
+    color: white;
+    border: none;
+    padding: 16px;
+    font-size: 16px;
+}
+
+.trash-btn:hover {
+    background-color: white;
+    color: rgb(245, 105, 105);
+}
+
+.complete-btn {
+    cursor: pointer;
+    transition: 0.4s ease;
+    /*lowered saturation 4 eyestrain*/
+    background-color: rgb(182, 243, 120);
+    color: white;
+    border: none;
+    padding: 16px;
+    font-size: 16px;
+}
+
+.complete-btn:hover {
+    background-color: white;
+    color: rgb(153, 240, 67);
+}
+
+.todo-item {
+    padding: 0px 24px;
+}
+
+.completed {
+    /*the complete button*/
+    /*lowers opacity and strikes item to imply it's done*/
+    /*reversible via click*/
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+select {
+    cursor: pointer;
+    background-color: white;
+    color: rgb(255, 100, 136);
+    width: 90px;
+    padding: 15px;
+    border-radius: 13px;
+    padding: 3px;
+    border: none;
+    outline: none;
+}
+
+.select {
+    /*the div around select*/
+    margin-bottom: 15px;
+    margin-top: 0px;
+    position: relative;
+}
+
+select:hover {
+    cursor: pointer;
+    transition: all ease 0.5s;
+    background-color: rgb(250, 117, 148);
+    color: white;
+}
+
+.select:focus {
+    outline: none;
+    box-shadow: none;
+    border: none;
+    outline: none;
+}
